@@ -77,7 +77,7 @@ get('submitPreview').addEventListener('click',async function(){
  if(rows.length!==47){alert('47곡 목록을 확인해 주세요.');return;}
  var btn=get('submitPreview');sending=true;btn.disabled=true;btn.textContent='제출 중...';
  try{
-  var endpoint=PROJECT_URL.replace(/\/$/,'')+'/functions/v1/submit-season-survey';
+  var endpoint=PROJECT_URL.replace(/\/$/,'')+'/functions/v1/svtchive-season-survey';
   var response=await fetch(endpoint,{
    method:'POST',headers:{'Content-Type':'application/json'},
    body:JSON.stringify({submission_id:getSubmissionId(),answers:rows})
